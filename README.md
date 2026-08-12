@@ -33,4 +33,4 @@ Você pode ver o diagrama ERD completo [aqui](./imagens/diagrama_erd.svg).
 
 A estrutura foi desenvolvida para integrar áreas diferentes dentro da operação, usando chaves primárias e estrangeiras para preservar a consistência. O banco possui 20 relacionamentos, permitindo acompanhar toda a jornada de um pedido de venda, desde o cadastro do cliente até a entrega ou eventual cancelamento ou devolução.
 O principal relacionamento aqui é entre as tabelas customers, orders, order_items e products, permitindo um cliente realizar vários pedidos, e cada pedido podendo conter diversos itens, que estarão associados a um produto.
-<p align="center"><em>Relacionamento central utilizado nas análises comerciais da Ecommerce 360.</em></p>
+![Relacionamento central das vendas](./imagens/relacionamento_vendas.png)

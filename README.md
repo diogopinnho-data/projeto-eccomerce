@@ -14,4 +14,5 @@ O objetivo aqui é transformar esses dados em informações úteis para apoiar d
 * satisfação dos clientes, devoluções e cancelamentos;
 * cobertura de estoque, necessidade de reposição e dependência de fornecedores.
 
+O banco de dados, assim como todos os registros dentro dele, foram criados por mim.
 Você pode acessar todos os scripts aqui.

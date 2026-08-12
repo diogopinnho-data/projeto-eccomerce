@@ -42,3 +42,6 @@ O principal relacionamento aqui é entre as tabelas customers, orders, order_ite
     width="800"
   >
 </p>
+
+# Resumo executivo
+Logo nas análises iniciais, percebemos que a queda na receita não aconteceu de forma brusca, mas que o ano de 2025 perde em todos os meses na receita gerada para o ano de 2024.

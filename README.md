@@ -17,4 +17,20 @@ O objetivo aqui é transformar esses dados em informações úteis para apoiar d
 O banco de dados, assim como todos os registros dentro dele, foram desenvolvidos por mim.
 
 Você pode acessar todos os scripts [aqui](./scripts/sql/).
+
 Você pode acessar os dashboards desenvolvidos [aqui](./dashboards/).
+
+# Estrutura do banco de dados
+O banco de dados é composto por 18 tabelas, relacionadas entre si, abrangendo:
+* clientes
+* pedidos
+* produtos
+* pagamentos
+* entregas
+* estoque
+* fornecedores
+Você pode ver o diagrama ERD completo [aqui](./imagens/diagrama_erd.svg).
+
+A estrutura foi desenvolvida para integrar áreas diferentes dentro da operação, usando chaves primárias e estrangeiras para preservar a consistência. O banco possui 20 relacionamentos, permitindo acompanhar toda a jornada de um pedido de venda, desde o cadastro do cliente até a entrega ou eventual cancelamento ou devolução.
+O principal relacionamento aqui é entre as tabelas customers, orders, order_items e products, permitindo um cliente realizar vários pedidos, e cada pedido podendo conter diversos itens, que estarão associados a um produto.
+<p align="center"><em>Relacionamento central utilizado nas análises comerciais da Ecommerce 360.</em></p>

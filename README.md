@@ -29,8 +29,16 @@ O banco de dados é composto por 18 tabelas, relacionadas entre si, abrangendo:
 * entregas
 * estoque
 * fornecedores
+
 Você pode ver o diagrama ERD completo [aqui](./imagens/diagrama_erd.svg).
 
 A estrutura foi desenvolvida para integrar áreas diferentes dentro da operação, usando chaves primárias e estrangeiras para preservar a consistência. O banco possui 20 relacionamentos, permitindo acompanhar toda a jornada de um pedido de venda, desde o cadastro do cliente até a entrega ou eventual cancelamento ou devolução.
+
 O principal relacionamento aqui é entre as tabelas customers, orders, order_items e products, permitindo um cliente realizar vários pedidos, e cada pedido podendo conter diversos itens, que estarão associados a um produto.
-![Relacionamento central das vendas](./imagens/relacionamento_vendas.png)
+<p align="center">
+  <img
+    src="./imagens/relacionamentos_tabelas_principais.svg"
+    alt="Relacionamento central das vendas"
+    width="800"
+  >
+</p>

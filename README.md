@@ -54,4 +54,4 @@ Com as análises, percebemos que a queda na receita não aconteceu de forma brus
 
 # Sobre a quantidade de pedidos:
 
-Os dois anos possuem uma quantidade parecida de pedidos (121 em 2024 e 114 em 2025), descartando a hipótese de problemas na quantidade de compras em 2025
+Os dois anos possuem uma quantidade parecida de pedidos (121 em 2024 e 114 em 2025), descartando a hipótese de problemas na quantidade de compras em 2025.

@@ -47,7 +47,8 @@ O principal relacionamento aqui é entre as tabelas customers, orders, order_ite
 # Hipóteses descartadas:
 * Queda na receita de forma brusca;
 * Problemas em relação à quantidade de pedidos de clientess
-Sobre a receita:
+
+# Sobre a receita:
 
 Com as análises, percebemos que a queda na receita não aconteceu de forma brusca, mas que o ano de 2025 perde em todos os meses na receita gerada para o ano de 2024.
 

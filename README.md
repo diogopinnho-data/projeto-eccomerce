@@ -43,7 +43,7 @@ O principal relacionamento aqui é entre as tabelas customers, orders, order_ite
   >
 </p>
 
-#📈 Resumo executivo
+# 📈 Resumo executivo
 # Hipóteses descartadas:
 * Queda na receita de forma brusca;
 * Problemas em relação à quantidade de pedidos de clientess

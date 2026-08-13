@@ -1,126 +1,125 @@
-# projeto-eccomerce
-Nesse projeto, resolvo alguns problemas de negócio e faço algumas análises para melhorar a performance de uma empresa inserida no eccomerce
+# Projeto Ecommerce360 - Análise de queda de receita
+Análise desenvolvida para identificar fatores associados à queda da receita da empresa Ecommerce360 entre 2024 e 2025.
 
-# Contexto e visão do projeto
-A Ecommerce 360 é uma empresa de comércio online especializada na venda de produtos e acessórios esportivos para clientes de diferentes regiões do Brasil. Sua operação integra vendas, pagamentos, entregas, estoques e relacionamento com fornecedores, gerando dados que podem apoiar decisões comerciais e operacionais.
-Com o crescimento da operação da empresa, foi necessário juntar essas informações em uma visão analítica, acompanhando o desempenho da empresa, identificar oportunidades de crescimento e antecipar **riscos** relacionados à **rentabilidade**, **experiência do cliente** e à **disponibilidade de produtos**.
-Este projeto analisa os dados da Ecommerce360 entre janeiro de 2024 e agosto de 2026. A base reúne 240 pedidos, 600 itens vendidos, 50 clientes, 40 produtos, 8 categorias, 10 marcas, 3 centros de distribuição e 6 fornecedores.
-# 🎯O objetivo do projeto
-A empresa identificou uma redução na receita anual entre 2024 e 2025. O objetivo desse projeto é investigar o motivo dessa redução, gerando insights para a diretoria de forma objetiva e estruturada. Os fatores analisados serão:
+Meu objetivo aqui é entregar insights e recomendações que ajudarão a empresa na definição de novas estratégias.
+
+# ‼️OBS
+
+Antes de iniciar a leitura, quero deixar claro que utilizei IA como ferramenta de apoio na construção e revisão de consultas SQL nesse projeto. 
+
+Acredito que o uso de IA pode contribuir de forma positiva para a agilidade e para o desenvolvimento do trabalho de um analista de dados, desde que seja utilizada como uma ferramenta, e não como o senso crítico. 
+
+Não utilizei a ferramenta para substituir meu raciocínio ou a interpretação de análises. 
+
+Todos os prompts utilizados podem ser conferidos aqui.
+
+# Sumário
+* Visão geral do projeto
+* Visão geral da estrutura de dados
+* Resumo executivo
+* Aprofundamento das análises
+* Minhas recomendações
+* Limitações
+* Ferramentas utilizadas
+
+# Visão geral do projeto
+A Ecommerce360 é uma empresa de comércio online especializada na venda de produtos e acessórios esportivos para clientes de diferentes regiões do Brasil.
+
+Sua operação integra vendas, pagamentos, entregas, estoques e relacionamento com fornecedores. Esses processos geram dados que podem ser utilizados para acompanhar o desempenho comercial, identificar oportunidades de crescimento e antecipar riscos relacionados à receita, à experiência do cliente e à disponibilidade de produtos.
+
+**Objetivo comercial:**
+O objetivo desse projeto é explicar a queda da receita da empresa no ano de 2025, e entregar insights para apoiar a tomada de decisão da diretoria.
+
+Os seguintes pontos foram avaliados:
+
 * Evolução mensal da receita;
 * Quantidade de pedidos entregues;
-* Ticket médio mensal;
 * Quantidade de unidades vendidas;
-* Média de unidades por pedido;
-* Desempenho de produtos, marcas e categorias;
+* Tamanho médio da cesta;
+* Valor médio por unidade;
+* Desempenho de produtos e marcas;
 * Utilização de cupons e descontos;
-* Comportamento dos clientes e regiões;
-* Cancelamentos, devoluções e reembolsos.
+* Cancelamentos de pedidos;
+* Devoluções e reembolsos.
 
-O banco de dados, assim como todos os registros dentro dele, foram desenvolvidos por mim.
+O banco de dados, assim como a carga de dados nele, foram desenvolvidos por mim apenas para esse projeto específico.
 
-Você pode acessar todos os scripts [aqui](./scripts/sql/).
+**A documentação técnica e os códigos utilizados nas análises estão [aqui](./scripts_sql/).**
 
-Você pode acessar os dashboards desenvolvidos [aqui](./dashboards/).
+# Estrutura dos dados
 
-# Estrutura do banco de dados
-O banco de dados é composto por 18 tabelas, relacionadas entre si, abrangendo:
-* clientes
-* pedidos
-* produtos
-* pagamentos
-* entregas
-* estoque
-* fornecedores
+A base traz dados entre janeiro de 2024 e agosto de 2026. A análise levará em conta apenas os anos de 2024 e 2025, pois 2026 não contém dados suficientes para isso.
 
-Você pode ver o diagrama ERD completo [aqui](./imagens/diagrama_erd.svg).
+**Escopo:**
 
-A estrutura foi desenvolvida para integrar áreas diferentes dentro da operação, usando chaves primárias e estrangeiras para preservar a consistência. O banco possui 20 relacionamentos, permitindo acompanhar toda a jornada de um pedido de venda, desde o cadastro do cliente até a entrega ou eventual cancelamento ou devolução.
+O banco é composto por 18 tabelas relacionadas, trazendo dados sobre:
+* clientes e endereços;
+* pedidos e itens vendidos;
+* produtos, categorias e marcas;
+* pagamentos;
+* entregas;
+* estoques e centros de distribuição;
+* fornecedores;
+* cupons e descontos;
+* cancelamentos;
+* devoluções e avaliações.
 
-O principal relacionamento aqui é entre as tabelas customers, orders, order_items e products, permitindo um cliente realizar vários pedidos, e cada pedido podendo conter diversos itens, que estarão associados a um produto.
+** Diagrama completo do banco de dados:**
+<p align="center">
+  <img
+    src="./imagens/diagrama_erd.svg"
+    alt="Diagrama de Entidade-Relacionamento da Ecommerce 360"
+    width="900"
+  >
+</p>
+
+<p align="center">
+  <em>Diagrama completo da estrutura do banco de dados.</em>
+</p>
+
+O relacionamento central da operação ocorre entre as tabelas customers, orders, order_items e products.
+
+Um cliente pode realizar vários pedidos. Cada pedido pode conter diversos itens, e cada item está associado a um produto do catálogo.
+
 <p align="center">
   <img
     src="./imagens/relacionamentos_tabelas_principais.svg"
-    alt="Relacionamento central das vendas"
+    alt="Relacionamento entre clientes, pedidos, itens e produtos"
     width="800"
   >
 </p>
 
-# Análise
-**Principais insights identificados:**:
-* A queda da receita não aconteceu de forma isolada. Em 2025 a receita ficou abaixo de 2024 em todos os meses;
-* A quantidade de pedidos entregues nos dois anos foi quase a mesma, descartando a ideia de que a quantidade de pedidos foi o principal motivo para a receita cair;
-* O tamanho médio da cesta dos clientes caiu 34.3% (média de 5.98 unidades por pedido em 2024 e 3.93 em 2025), mostrando que esse pode ser o motivo que estamos procurando para uma receita prejudicada em 2025;
-* A recuperação das vendas das marcas Puma, Penalty, Adidas e Nike são prioridade, já que elas juntas representaram 64,2% da receita perdida no ano de 2025.
+<p align="center">
+  <em>Relacionamento central utilizado nas análises comerciais.</em>
+</p>
 
-**Sobre a receita:**
+# Resumo executivo:
 
-Percebi uma diferença grande na receita quando comparei os anos de 2024 e 2025, sendo que:
-* Receita 2024: R$65.131,03
-* Receita 2025:R$35.526,58
+A receita dos **pedidos entregues** caiu **45,5%**, passando de R$65.131,03 em 2024, para R$35.526,58 em 2025. A queda foi analisada de forma detalhada nesse projeto, deixando em evidência:
+* redução de 15,5% na quantidade de pedidos entregues;
+* diminuição de 34,3% no tamanho médio das cestas (principal motivo para a queda na receita, conforme análises).
+* taxa de cancelamento subiu de 0,83% em 2024 para 8,77% em 2025.
 
-Com as análises, fica claro que a queda na receita não aconteceu de forma brusca, mas que o ano de 2025 perde em todos os meses na receita gerada para o ano de 2024.
-
-**Sobre a quantidade de pedidos**:
-
-Os dois anos possuem uma quantidade parecida de pedidos entregues (84 em 2024 e 71 em 2025), praticamente descartando a hipótese de problemas na quantidade de compras em 2025.
-
-**Sobre a quantidade de unidades vendidas de cada produto, em cada ano**:
-
-Assim como o esperado, o ano de 2024 teve mais unidades vendidas de cada um dos produtos, quando comparado ao ano de 2025. Isso mostra então que a diminuição da receita se deve não somente à diminuição das vendas de um item só, mas sim de vários (quase todos).
-
-**Sobre a quantidade de produtos por pedidos em cada ano:**
-
-Com algumas análises, percebe-se que a quantidade de produtos por pedido em 2024 era de 5.98, e caiu para 3.93 em 2025. Isso comprova que o problema, ao invés de estar na quantidade de pedidos, pode estar na quantidade de produtos em cada um dos pedidos, já que os clientes continuam comprando, mas em quantidades reduzidas.
-
+<!--
+print do dashboard quando estiver pronto
 <p align="center">
   <img
-    src="./imagens/media_produtos_por_cesta.png"
-    alt="Comparação tamanho das cestas"
-    width="300"
+    src="./dashboards/NOME_DO_DASHBOARD.png"
+    alt="Dashboard executivo da Ecommerce 360"
+    width="900"
   >
 </p>
 
 <p align="center">
-  <em>Comparação do tamanho das cestas em 2024 e 2025.</em>
+  <em>Visão executiva dos principais indicadores de 2024 e 2025.</em>
 </p>
+-->
 
-**Sobre o valor médio por unidade vendida:**
+# Insights detalhados
+**Evolução da receita:**
 
-É fundamental entender se o tamanho das cestas foi o único responsável pela queda na receita em 2025. Após verificar o valor médio por unidade vendida, percebe-se que o valor em 2024 foi de R$132,84 em média, e em 2025 foi de R$129,37, mostrando que esse não foi um fator prejudicial para o nosso problema de receita.
+Considerei receita apenas pedidos entregues (status "delivered").
 
-**Sobre o desempenho de produtos e marcas:**
+Ano de 2024: Receita de R$65.131,03.
 
-Todos os produtos registraram uma queda, quando comparamos 2025 com 2024; o que era esperado, já que já foi comprovado que a receita total caiu. 
-
-Dos 40 produtos, 37 perderam receita e somente 3 apresentaram crescimento nas vendas. Isso mostra que essa redução na receita aconteceu de forma generalizada, em praticamente todos os produtos.
-
-As unidades vendidas caíram de 502 em 2024 para 279 em 2025 (redução de 44%). Nesse mesmo período, a receita dos itens passou de R$66.684,21 para R$36.094,87, queda de 45.9%.
-
-A redução atingiu quase todos os produtos, mas 5 deles se destacaram, sendo responsáveis por 38,56% da queda da receita, quando somados. Esses produtos tiveram valores semelhantes por unidades nos dois anos, e isso mostra que a perda na receita foi provocada pela redução das quantidades.
-
-As marcas também apresentam um comportamento semelhante, onde todas perderam receita no ano de 2025, mas que 4 marcas são responsáveis por uma grande parte da receita perdida (64,2%).
-
-A Puma teve o maior impacto, com queda de R$5.925,43 na receita.
-
-Os resultados mostraram mais uma vez que a queda foi generalizada, e não individualizada. Também nos dão um insight de que a empresa pode dar mais prioridade para recuperar marcas como Puma, Penalty, Adidas e Nike.
-
-**Sobre utilização de cupons de descontos nos dois anos:**
-
-Os dois anos mostraram uma quantidade parecida de uso de cupons de desconto (37 em 2024 e 31 em 2025), o que de cara já nos fala que esse fator não teve tanto impacto na receita.
-
-O total concedido em descontos:
-* 2024: R$1.677,68, com impacto de 2,51% na receita gerada no ano;
-* 2025: R$1.325,49, com impacto de 3,6% na receita gerada no ano.
-
-<p align="center">
-  <img
-    src="./imagens/taxa_utilizacao_cupons.png"
-    alt="Taxa de utilização de cupons em 2024 e 2025"
-    width="500"
-  >
-</p>
-
-<p align="center">
-  <em>Comparação da utilização de cupons em 2024 e 2025.</em>
-</p>
+Ano de 2025: Receita de R$35.526,54 --> queda de 45,5% em relação à 2024.

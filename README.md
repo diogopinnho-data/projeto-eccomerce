@@ -64,4 +64,14 @@ Assim como o esperado, o ano de 2024 teve mais unidades vendidas de cada um dos 
 
 O ticket médio mensal de 2024 mostrou ser bem maior quando comparado ao ano de 2025, deixando o valor de cada compra menor. Isso deixa claro que o problema da receita diminuir pode estar atrelado ao tamanho das cestas dos clientes durante o tempo. Podemos comprovar isso com a quantidade média de produtos por cesta nos dois anos.
 
-![Comparação da receita mensal entre 2024 e 2025](./imagens/media_produtos_por_cesta.png)
+<p align="center">
+  <img
+    src="./imagens/media_produtos_por_cesta.png"
+    alt="Comparação tamanho das cestas"
+    width="800"
+  >
+</p>
+
+<p align="center">
+  <em>Comparação do tamanho das cestas em 2024 e 2025.</em>
+</p>

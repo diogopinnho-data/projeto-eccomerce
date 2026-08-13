@@ -113,3 +113,14 @@ O total concedido em descontos:
 * 2024: R$1.677,68, com impacto de 2,51% na receita gerada no ano;
 * 2025: R$1.325,49, com impacto de 3,6% na receita gerada no ano.
 
+<p align="center">
+  <img
+    src="./imagens/taxa_utilizacao_cupons.png"
+    alt="Taxa de utilização de cupons em 2024 e 2025"
+    width="500"
+  >
+</p>
+
+<p align="center">
+  <em>Comparação da utilização de cupons em 2024 e 2025.</em>
+</p>

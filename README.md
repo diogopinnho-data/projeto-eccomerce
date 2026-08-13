@@ -57,3 +57,5 @@ Com as análises, percebemos que a queda na receita não aconteceu de forma brus
 Os dois anos possuem uma quantidade parecida de pedidos (121 em 2024 e 114 em 2025), descartando a hipótese de problemas na quantidade de compras em 2025.
 
 # Sobre a quantidade de unidades vendidas de cada produto, em cada ano:
+
+Assim como o esperado, o ano de 2024 teve mais unidades vendidas de cada um dos produtos, quando comparado ao ano de 2025. Isso mostra então que a diminuição da receita se deve não somente à diminuição das vendas de um item só, mas sim de vários (quase todos).

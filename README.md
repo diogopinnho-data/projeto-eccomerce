@@ -68,7 +68,7 @@ O ticket médio mensal de 2024 mostrou ser bem maior quando comparado ao ano de 
   <img
     src="./imagens/media_produtos_por_cesta.png"
     alt="Comparação tamanho das cestas"
-    width="500"
+    width="300"
   >
 </p>
 

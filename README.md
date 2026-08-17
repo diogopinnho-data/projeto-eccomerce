@@ -291,7 +291,6 @@ As áreas comercial e marketing, podem utilizar os resultados desta análise par
 
 * **PostgreSQL**: consultas, tratamento e análise de dados;
 * **Excel**: validação dos resultados, análises complementares, e alguns prints de gráficos rápidos;
-* **Tableau**: construção dos dashboards e visualizações;
 * **GitHub:** documentação e versionamento do projeto.
 
 # Documentação técnica
@@ -300,4 +299,3 @@ Os recursos técnicos do projeto estão disponíveis nos diretórios:
 
 * [scripts_sql](../scripts_sql)
 * [imagens](../imagens)
-* dashboards
